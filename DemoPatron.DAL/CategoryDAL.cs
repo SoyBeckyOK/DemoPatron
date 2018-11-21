@@ -23,10 +23,10 @@ namespace DemoPatron.DAL
         public List<Category> GetCategories()
         {
             //Transaccione en sql
-            var query = "SELECT * FROM T_" +
+            var query = "SELECT * FROM" +
                 "" +
-                "Categories";
-            return repository.GetAll(query).ToList();
+                "T_Categories";
+            return repository.GetAll(query).ToList(); //test
 
         }
     }
