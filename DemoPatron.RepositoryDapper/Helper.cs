@@ -4,15 +4,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace DemoPatron.DAL
+namespace DemoPatron.RepositoryDapper
 {
     class Helper
     {
         private readonly string KeyName;
-        //nos obtendra el  valor de la llave
-        public Helper(string KeyName)
+        public Helper(string keyName) //nos obtendra el  valor de la llave
         {
-            this.KeyName = KeyName;
+            this.KeyName = keyName;
         }
 
 

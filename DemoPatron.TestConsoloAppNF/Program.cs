@@ -11,12 +11,12 @@ namespace DemoPatron.TestConsoloAppNF
     {
         static void Main(string[] args)
         {
-            var Categories = new CategoryManager().
-                GetCategories();
-            foreach (var category in Categories)
-            {
-                Console.WriteLine($"Id: { category.CategoryID}, Name: { category.CategoryName} ");
-            }
+            var Alumnos = new  AlumnoManager().GetAlumnos();
+            
+                foreach (var alumno in Alumnos)
+                {
+                    Console.WriteLine($"ID: {alumno.ID_Alumno}, Nombre: { alumno.Nombre}, Apellido: { alumno.Apellido}, Direccion: {alumno.Direccion}, Telefono:  {alumno.Telefono} ");
+                }
             Console.ReadLine();
         }
     }

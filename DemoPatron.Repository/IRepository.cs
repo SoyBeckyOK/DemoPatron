@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace DemoPatron.Repository
@@ -14,10 +15,10 @@ namespace DemoPatron.Repository
         //Vamos a tener un metodo para poder obtener una lista 
         IEnumerable<T> GetAll(string query);
 
-       //Este metodo nos permitira insertar un  nuevo registro
-        int Insert(string query, T data);
+        
+        T Create(T t);
+        int Update(T T);
+        int Delete(Expression<Func<T, bool>> predicate);
 
-        // Metodo que nos permitira actualizar un registro
-        int Update(string query, T data);
     }
 }

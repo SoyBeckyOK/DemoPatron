@@ -1,24 +1,24 @@
 ﻿using DemoPatron.DAL;
 using DemoPatron.Entities;
-using DemoPatron.Repository;
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace DemoPatron.BLL
 {
-    public class CategoryManager
+   public class AlumnoManager
     {
-        private readonly CategoryDAL DAL;
-        public CategoryManager()
+        private readonly AlumnoDAL DAL;
+        public AlumnoManager()
         {
-            DAL = new CategoryDAL();
+            DAL = new AlumnoDAL();
         }
-        public List<Category> GetCategories()
+        public List<Alumno> GetAlumnos()
         {
             //Logica de negocio 
             // if producto.invetario == 0 no eliminar
             // if producto.Name == NewName then no guardar
-            return DAL.GetCategories();
+            return DAL.GetAlumnos();
         }
     }
 }
