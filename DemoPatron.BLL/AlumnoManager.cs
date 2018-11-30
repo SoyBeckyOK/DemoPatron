@@ -20,5 +20,10 @@ namespace DemoPatron.BLL
             // if producto.Name == NewName then no guardar
             return DAL.GetAlumnos();
         }
+
+        public int Eliminar(int id)
+        {
+            return DAL.Eliminar();
+        }
     }
 }

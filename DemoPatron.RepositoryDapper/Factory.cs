@@ -5,6 +5,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Data.SQLite;
 using Npgsql;
+using Dapper.Contrib;
+
 
 namespace DemoPatron.RepositoryDapper
 {
@@ -12,6 +14,7 @@ namespace DemoPatron.RepositoryDapper
 
     {
         public System.Data.IDbConnection connection { get; }
+        
         
             
         public Factory()

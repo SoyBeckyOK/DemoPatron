@@ -6,20 +6,31 @@ using System.Linq;
 using System.Data.SqlClient;
 using Npgsql;
 using System.Linq.Expressions;
+using Dapper.Contrib;
 
 namespace DemoPatron.RepositoryDapper
 {
     public class RepositoryDapper<T> : IRepository<T> where T : class
     {
-        public T Create(T t)
+        public T Create(string query, T t)
         {
-            throw new NotImplementedException();
+            using (var connection = new Factory())
+            {
+                return connection.connection.Query(query, t).Single();
+            }
         }
 
-        public int Delete(Expression<Func<T, bool>> predicate)
+        public int Delete(string query)
         {
-            throw new NotImplementedException();
+            using (var connection = new Factory())
+            {
+                return connection.connection.QuerySingle(query);
+                //return connection.connection.Query(query).Single();
+                
+            }
+            
         }
+        
 
         public IEnumerable<T> GetAll(string query)
         {
@@ -29,9 +40,12 @@ namespace DemoPatron.RepositoryDapper
             }
         }
 
-        public int Update(T T)
+        public int Update(string query, int id)
         {
-            throw new NotImplementedException();
+            using (var connection = new Factory())
+            {
+                return connection.connection.Query(query, id).Single();
+            }
         }
     }
 }
